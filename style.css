@@ -23,6 +23,10 @@ body {
   font-size: large;
   color: green;
 }
+.hamburger,
+#toggle {
+  display: none;
+}
 
 .navItems a:first-child {
   color: green; /* Turns the "home" link green */
@@ -199,16 +203,99 @@ button:hover {
   font-size: 1.2em;
 }
 
+.services {
+  display: flex;
+  /* margin-top: -3rem; */
+  justify-content: space-between;
+}
+
+.serviceCard {
+  background-color: #fff;
+  width: 200px;
+  height: 200px;
+  box-shadow: 2px 3px 10px;
+}
+.serviceCard > p {
+  font-size: small;
+  font-style: italic;
+}
+.serviceCard > h3 {
+  font-size: large;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(10, 151, 97);
+  padding: 20px 0;
+  color: white;
+}
+.foot h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+.dnt {
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dnt:hover {
+  background-color: orange;
+}
+
 /* Responsive Styles */
+/* Responsive Styles */
+
+/* Medium Devices (Tablets) - Max width 768px */
 @media (max-width: 768px) {
+  /* Navigation */
+  .innerNav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navItems {
+    display: none;
+  }
+
+  #toggle:checked + .navItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  /* Banner Section */
   .banner {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
+  .bannerImage img {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  /* About Section */
   .about {
     flex-direction: column;
-    align-items: center;
   }
 
   .aboutImage,
@@ -217,24 +304,54 @@ button:hover {
     text-align: center;
   }
 
-  .aboutContent {
-    margin-top: 20px;
-  }
-
   .pillar {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Volunteer Section */
+  .volCon {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .volcard {
+    width: 45%;
+    height: 200px;
   }
 }
 
+/* Small Devices (Phones) - Max width 480px */
 @media (max-width: 480px) {
+  /* Navigation */
   .navItems a {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   button {
     width: 100px;
+    font-size: 12px;
   }
 
+  /* Banner Content */
+  .banner-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+
+  /* About Section */
+  .aboutContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .aboutContent p {
+    font-size: 0.9rem;
+  }
+
+  /* Bottom Section */
   .bottom-item h1 {
     font-size: 1.5em;
   }
@@ -243,49 +360,94 @@ button:hover {
     font-size: 1em;
   }
 
-  .banner-content h1 {
-    font-size: 1.2rem;
+  /* Volunteer Section */
+  .volcard {
+    width: 100%;
+    height: 150px;
   }
 
-  .aboutContent h1 {
-    font-size: 1.5rem;
+  .volcard p {
+    font-size: 12px;
   }
+  /* Responsive Styles for .services and .serviceCard */
 
-  .banner-content p {
-    font-size: 0.9rem;
-  }
-  /* For tablets (max-width: 768px) */
+  /* Tablet (max-width: 768px) */
   @media (max-width: 768px) {
-    .volCon {
-      flex-wrap: wrap; /* Allows the boxes to wrap to the next line */
-      justify-content: center; /* Centers the content when wrapping */
+    .services {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* Adds space between service cards */
     }
 
-    .volcard {
-      width: 45%; /* Adjust the width to make two items per row */
-      height: 150px; /* Keep the same height */
+    .serviceCard {
+      width: 80%; /* Adjusts the width of service cards for better display on tablets */
+      height: auto; /* Allows height to adjust based on content */
+    }
+
+    .serviceCard > h3 {
+      font-size: medium;
+    }
+
+    .serviceCard > p {
+      font-size: 14px;
     }
   }
 
-  /* For mobile devices (max-width: 480px) */
+  /* Mobile (max-width: 480px) */
   @media (max-width: 480px) {
-    .volCon {
-      flex-direction: column; /* Stack the items vertically */
-      gap: 15px; /* Slightly reduce the gap between items */
+    .services {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px; /* Reduces the gap between cards for mobile view */
     }
 
-    .volcard {
-      width: 100%; /* Full width for mobile */
-      height: 150px; /* Same height */
+    .serviceCard {
+      width: 90%; /* Further narrows service cards for smaller screens */
+      height: auto;
+      padding: 10px; /* Adds some padding for better spacing */
     }
 
-    .volcard img {
-      border-radius: 10px;
-      object-fit: cover; /* Ensures images still cover the box */
+    .serviceCard > h3 {
+      font-size: small; /* Reduces font size for headers on mobile */
     }
 
-    .volcard p {
-      font-size: 12px; /* Slightly smaller font for mobile */
+    .serviceCard > p {
+      font-size: 12px; /* Reduces paragraph font size for mobile */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .foot {
+      flex-direction: column; /* Stack content vertically */
+      text-align: center;
+    }
+
+    .foot h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px; /* Adds space between heading and button */
+    }
+
+    .dnt {
+      padding: 8px 18px; /* Adjust padding */
+      font-size: 14px; /* Adjust font size for tablet */
+      width: 60%; /* Makes button width responsive */
+    }
+  }
+
+  /* Mobile (max-width: 480px) */
+  @media (max-width: 480px) {
+    .foot {
+      padding: 15px 0; /* Reduces padding */
+    }
+
+    .foot h1 {
+      font-size: 1.2rem; /* Smaller font size for heading */
+    }
+
+    .dnt {
+      padding: 6px 16px; /* Further reduce padding */
+      font-size: 12px; /* Smaller font size for button */
+      width: 80%; /* Makes button nearly full-width */
     }
   }
 }

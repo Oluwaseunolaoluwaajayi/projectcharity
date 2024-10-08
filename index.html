@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Charity Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <link rel="stylesheet" href="./style.css" />
+  
 
   <body>
     <div class="top-wrapper">
       <nav>
         <div class="innerNav genLayout">
           <h1 class="title">charity</h1>
+
+          <label for="toggle" class="hamburger">&#9776;</label>
+          <input type="checkbox" id="toggle" />
           <div class="navItems">
             <a href="#">Home</a>
             <a href="#">About</a>
@@ -103,52 +111,22 @@
       </section>
 
       <section class="secThree">
-        <div class="about genLayout">
-          <div class="aboutImage">
-            <img
-              src="./image/charity-removebg-preview.png"
-              alt="Charity Website"
-            />
-
-            <!-- <img src="./image/img3.jpg" alt="man/woman" /> -->
+        <div class="bottom">
+          <div class="bottom-item">
+            <h1>200+</h1>
+            <p>Volunteers</p>
           </div>
-
-          <div class="aboutContent">
-            <h2>About our charity</h2>
-            <h1>
-              Communities in need of <br />
-              support are our focus
-            </h1>
-
-            <p>
-              Charitable organizations and foundations work towards raising
-              <br />funds and awareness for these causes, and then use those
-              resources to help those <br />
-              in need.
-            </p>
-
-            <div class="pillar">
-              <div class="pillar-item">
-                <img src="./image/checkmark.png" alt="Tick Mark" />
-                <p>Providing food</p>
-              </div>
-              <div class="pillar-item">
-                <img src="./image/checkmark.png" alt="Tick Mark" />
-                <p>Supporting education</p>
-              </div>
-              <div class="pillar-item">
-                <img src="./image/checkmark.png" alt="Tick Mark" />
-                <p>Offering medical care</p>
-              </div>
-              <div class="pillar-item">
-                <img src="./image/checkmark.png" alt="Tick Mark" />
-                <p>Providing disaster relief</p>
-              </div>
-            </div>
-
-            <div class="donate">
-              <button><span class="donate-button">Donate Now</span></button>
-            </div>
+          <div class="bottom-item">
+            <h1>80+</h1>
+            <p>Campaigns</p>
+          </div>
+          <div class="bottom-item">
+            <h1>500+</h1>
+            <p>Donations</p>
+          </div>
+          <div class="bottom-item">
+            <h1>15M+</h1>
+            <p>Charity in last year</p>
           </div>
         </div>
       </section>
@@ -180,25 +158,43 @@
         </div>
       </section>
 
-      <section>
-        <div class="bottom">
-          <div class="bottom-item">
-            <h1>200+</h1>
-            <p>Volunteers</p>
+      <section class="secFive">
+        <div class="services genLayout">
+          <div class="serviceCard">
+            <span><i class="fa fa-book" aria-hidden="true"></i></span>
+            <h3>For education</h3>
+            <p> It has survived not only five centuries, but <br>
+              also the leap into electronic typesetting,remained essentially unchanged.
+            </p>
+            
           </div>
-          <div class="bottom-item">
-            <h1>80+</h1>
-            <p>Campaigns</p>
+          <div class="serviceCard">
+            <span><i class="fa fa-child" aria-hidden="true"></i></span>
+            <h3>for children</h3>
+            <p>It has survived not only five centuries, but <br>
+              also the leap into electronic typesetting,remained essentially unchanged</p>
+            
           </div>
-          <div class="bottom-item">
-            <h1>500+</h1>
-            <p>Donations</p>
+          <div class="serviceCard">
+            <span><i class="fa fa-home" aria-hidden="true"></i></span>
+            <h3>For homeless</h3>
+            <p>
+              It has survived not only five centuries, but <br>
+              also the leap into electronic typesetting,remained essentially unchanged
+            </p>
           </div>
-          <div class="bottom-item">
-            <h1>15M+</h1>
-            <p>Charity in last year</p>
+          
+            
           </div>
         </div>
+      </section>
+
+      <section class="secSix">
+        <div class="foot">
+         <h1>Make a donation to people in need</h1>
+         <button class="dnt">Donate</button>
+        </div>
+        
       </section>
     </main>
   </body>
